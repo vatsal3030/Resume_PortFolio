@@ -4,11 +4,24 @@ import { Mail, Code, Briefcase, Heart, ShieldCheck } from 'lucide-react';
 
 export default function Contact() {
   const [likes, setLikes] = useState(0);
+  const [views, setViews] = useState(0);
 
   useEffect(() => {
     const storedLikes = localStorage.getItem('vatsal_portfolio_likes');
     if (storedLikes) setLikes(parseInt(storedLikes, 10));
     else setLikes(142);
+
+    // Simulated View Tracking starting at 5k baseline
+    const storedViews = localStorage.getItem('vatsal_portfolio_views');
+    if (storedViews) {
+      const newViews = parseInt(storedViews, 10) + 1;
+      setViews(newViews);
+      localStorage.setItem('vatsal_portfolio_views', newViews.toString());
+    } else {
+      const baseViews = 5248 + Math.floor(Math.random() * 10);
+      setViews(baseViews);
+      localStorage.setItem('vatsal_portfolio_views', baseViews.toString());
+    }
   }, []);
 
   const handleLike = () => {
@@ -37,12 +50,16 @@ export default function Contact() {
           </a>
         </motion.div>
 
-        {/* Local Analytics Hub - Erased external view badge */}
+        {/* Public View Counter & Likes */}
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ borderTop: '1px solid var(--border-color)', paddingTop: '3rem', width: '100%', maxWidth: '600px', display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-            <ShieldCheck size={20} color="var(--text-muted)" />
-            <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Zero Tracking</span>
-            <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.9rem', color: '#555', marginTop: '0.5rem' }}>Private Environment</span>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.8rem' }}>
+            <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Total Views</span>
+            <div style={{ padding: '0.2rem 1rem', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border-color)' }}>
+                <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '1.2rem', color: '#fff', pointerEvents: 'none' }}>
+                  {views > 0 ? views.toLocaleString() : 'Loading...'}
+                </span>
+            </div>
           </div>
 
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={handleLike} style={{ cursor: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>

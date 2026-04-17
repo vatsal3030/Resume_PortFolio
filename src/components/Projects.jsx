@@ -48,18 +48,18 @@ export default function Projects() {
   return (
     <section id="projects" className="section" style={{ padding: '6rem 0', borderTop: '1px solid var(--border-color)' }}>
       <div className="container" style={{ width: '100%' }}>
-        <motion.h2 initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ fontSize: '3rem', marginBottom: '4rem' }}>
+        <motion.h2 initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
           Selected Works
         </motion.h2>
 
-        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: 'clamp(1.5rem, 5vw, 3rem)' }}>
           {projects.map((p, idx) => (
             <motion.div variants={item} whileHover={{ y: -5 }} key={idx} className="glass-card" style={{ display: 'flex', flexDirection: 'column', cursor: 'none', padding: 0, overflow: 'hidden' }}>
               <div style={{ height: '200px', width: '100%', background: '#111', overflow: 'hidden' }}>
                 <img src={p.img} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%)', transition: 'filter 0.3s' }} onMouseEnter={e => e.target.style.filter = 'grayscale(0%)'} onMouseLeave={e => e.target.style.filter = 'grayscale(100%)'} />
               </div>
-              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>{p.title}</h3>
+              <div style={{ padding: 'clamp(1rem, 5vw, 2rem)', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <h3 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.75rem)', marginBottom: '0.5rem' }}>{p.title}</h3>
                 <p style={{ color: 'var(--text-muted)', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.9rem', marginBottom: '1rem' }}>{p.subtitle}</p>
                 <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '2rem', flex: 1 }}>{p.desc}</p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>

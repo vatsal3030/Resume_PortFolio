@@ -21,8 +21,8 @@ export default function Experience() {
   const item = { hidden: { opacity: 0, x: -20 }, show: { opacity: 1, x: 0 } };
 
   return (
-    <section id="experience" className="section" style={{ minHeight: '80vh', borderTop: '1px solid var(--border-color)', padding: '6rem 0' }}>
-      <div className="container" style={{ width: '100%', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+    <section id="experience" className="section" style={{ minHeight: '80vh', borderTop: '1px solid var(--border-color)', padding: 'clamp(4rem, 8vw, 6rem) 0' }}>
+      <div className="container" style={{ width: '100%', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)' }}>
         
         <div>
           <motion.h2 

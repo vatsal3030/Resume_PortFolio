@@ -45,8 +45,8 @@ export default function Navbar() {
         style={{
           position: 'fixed',
           top: '1rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
+          left: isMobile ? '1rem' : '50%',
+          transform: isMobile ? 'none' : 'translateX(-50%)',
           zIndex: 9000,
           background: 'rgba(5, 5, 5, 0.6)',
           backdropFilter: 'blur(12px)',
@@ -93,14 +93,14 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobile && isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.95, x: '-50%' }}
-            animate={{ opacity: 1, y: 0, scale: 1, x: '-50%' }}
-            exit={{ opacity: 0, y: -20, scale: 0.95, x: '-50%' }}
+            initial={{ opacity: 0, y: -20, scale: 0.95, x: 0 }}
+            animate={{ opacity: 1, y: 0, scale: 1, x: 0 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95, x: 0 }}
             transition={{ duration: 0.2 }}
             style={{
               position: 'fixed',
               top: '4.5rem',
-              left: '50%',
+              left: '1rem',
               zIndex: 8999,
               background: 'rgba(10, 10, 10, 0.9)',
               backdropFilter: 'blur(16px)',
@@ -112,7 +112,7 @@ export default function Navbar() {
               gap: '1.5rem',
               width: '80vw',
               maxWidth: '300px',
-              alignItems: 'center',
+              alignItems: 'flex-start',
               boxShadow: '0 10px 40px rgba(0,0,0,0.8)'
             }}
           >
