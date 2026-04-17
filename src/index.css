@@ -85,16 +85,5 @@ ul {
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
-  .glass-nav {
-    width: 95vw !important;
-    gap: 1rem !important;
-    padding: 0.8rem 1rem !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    border-radius: 20px !important;
-  }
-  .glass-nav a {
-    font-size: 0.8rem !important;
-    padding: 0.2rem;
-  }
+  /* Added specific resets if needed later, but Navbar is handled purely via Javascript now */
 }

@@ -5,6 +5,13 @@ const generateSVG = (text) => `data:image/svg+xml;utf8,<svg xmlns="http://www.w3
 
 const projects = [
   {
+    title: "Minimalist 3D Space Portfolio",
+    subtitle: "Awwwards-Style Personal Website",
+    desc: "A highly interactive, physics-based minimalist portfolio featuring a custom rendering engine. Built with a custom boot-sequence preloader and Framer Motion micro-interactions.",
+    tech: ["React", "Vite", "Framer Motion", "Particles Engine"],
+    img: generateSVG("Space Portfolio")
+  },
+  {
     title: "Vixora",
     subtitle: "Video Streaming Platform",
     desc: "A scalable full-stack video streaming platform with authentication, video uploads, playlists, and notifications. Implemented caching, rate limiting, and async processing using queues/workers and Socket.IO.",
