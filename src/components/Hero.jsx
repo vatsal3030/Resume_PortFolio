@@ -29,13 +29,19 @@ export default function Hero() {
             </motion.h2>
           </div>
           
-          <div className="text-reveal-wrapper">
+          <div className="text-reveal-wrapper" style={{ overflow: 'visible' }}>
             <motion.h1 
               variants={item} 
+              whileHover={{ 
+                x: [-2, 2, -2, 2, 0],
+                textShadow: ["3px 3px 0px rgba(255,255,255,0.8), -3px -3px 0px rgba(80,80,80,0.8)", "0px 0px 0px transparent"]
+              }}
+              transition={{ duration: 0.2, repeat: 0 }}
               style={{ 
                 fontSize: 'clamp(4rem, 10vw, 8rem)', 
                 lineHeight: 1,
-                letterSpacing: '-0.04em'
+                letterSpacing: '-0.04em',
+                cursor: 'none'
               }}
             >
               VATSAL<br/>VADGAMA
@@ -49,9 +55,11 @@ export default function Hero() {
             </motion.p>
           </div>
           
-          <div className="text-reveal-wrapper" style={{ marginTop: '2rem' }}>
+          <div className="text-reveal-wrapper" style={{ marginTop: '2rem', overflow: 'visible' }}>
             <motion.a 
               variants={item}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               href="#contact"
               style={{
                 display: 'inline-block',
@@ -61,6 +69,7 @@ export default function Hero() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
                 transition: 'all 0.3s',
+                cursor: 'none'
               }}
               onMouseEnter={(e) => {
                 e.target.style.backgroundColor = 'var(--text-color)';

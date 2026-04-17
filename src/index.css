@@ -12,6 +12,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  cursor: none !important;
 }
 
 body {
@@ -80,4 +81,20 @@ ul {
 
 .glass-card:hover {
   border-color: var(--text-muted);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .glass-nav {
+    width: 95vw !important;
+    gap: 1rem !important;
+    padding: 0.8rem 1rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    border-radius: 20px !important;
+  }
+  .glass-nav a {
+    font-size: 0.8rem !important;
+    padding: 0.2rem;
+  }
 }
