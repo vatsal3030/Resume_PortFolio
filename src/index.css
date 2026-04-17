@@ -87,3 +87,22 @@ ul {
 @media screen and (max-width: 768px) {
   /* Added specific resets if needed later, but Navbar is handled purely via Javascript now */
 }
+
+/* Magnetic Button Styles */
+.hero-btn {
+  display: inline-block;
+  border: 1px solid var(--text-color);
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  cursor: none;
+  background-color: transparent;
+  color: var(--text-color);
+}
+.hero-btn:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+

@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useScrambleText } from '../hooks/useScrambleText';
 
 export default function Hero() {
+  const { text: scrambleName, setIsHovering: setScrambleHover } = useScrambleText("VATSAL VADGAMA");
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -32,6 +34,8 @@ export default function Hero() {
           <div className="text-reveal-wrapper" style={{ overflow: 'visible' }}>
             <motion.h1 
               variants={item} 
+              onMouseEnter={() => setScrambleHover(true)}
+              onMouseLeave={() => setScrambleHover(false)}
               whileHover={{ 
                 x: [-2, 2, -2, 2, 0],
                 textShadow: ["3px 3px 0px rgba(255,255,255,0.8), -3px -3px 0px rgba(80,80,80,0.8)", "0px 0px 0px transparent"]
@@ -44,7 +48,7 @@ export default function Hero() {
                 cursor: 'none'
               }}
             >
-              VATSAL<br/>VADGAMA
+              {scrambleName.split(' ')[0]}<br/>{scrambleName.split(' ').slice(1).join(' ')}
             </motion.h1>
           </div>
           
@@ -60,25 +64,9 @@ export default function Hero() {
               variants={item}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({behavior: 'smooth'}) }}
               href="#contact"
-              style={{
-                display: 'inline-block',
-                border: '1px solid var(--text-color)',
-                padding: '1rem 2rem',
-                fontSize: '1rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                transition: 'all 0.3s',
-                cursor: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = 'var(--text-color)';
-                e.target.style.color = 'var(--bg-color)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.color = 'var(--text-color)';
-              }}
+              className="hero-btn"
             >
               Let's Talk
             </motion.a>

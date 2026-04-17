@@ -1,5 +1,13 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Code } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { useScrambleText } from '../hooks/useScrambleText';
+
+const GithubIcon = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3-.3 6-1.5 6-6.5a5.5 5.5 0 0 0-1.5-3.8 5.5 5.5 0 0 0-.1-3.8s-1.2-.4-3.9 1.4a13.3 13.3 0 0 0-7 0C6.2 1.5 5 1.5 5 1.5a5.5 5.5 0 0 0-.1 3.8A5.5 5.5 0 0 0 3.4 9c0 5 3 6.2 6 6.5a4.8 4.8 0 0 0-1 3.2v4"></path>
+    <path d="M9 18c-4.5 1.5-5-2.5-7-3"></path>
+  </svg>
+);
 
 const generateSVG = (text) => `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%23111111"/><rect width="600" height="400" fill="none" stroke="%23333333" stroke-width="4"/><text x="50%" y="50%" fill="%23555555" font-size="32" font-family="monospace" text-anchor="middle" dominant-baseline="middle">${encodeURIComponent(text)}</text></svg>`;
 
@@ -42,14 +50,22 @@ const projects = [
 ];
 
 export default function Projects() {
+  const { text: scrambleTitle, setIsHovering: setScrambleHover } = useScrambleText("Selected Works");
   const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.2 } } };
   const item = { hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } };
 
   return (
     <section id="projects" className="section" style={{ padding: '6rem 0', borderTop: '1px solid var(--border-color)' }}>
       <div className="container" style={{ width: '100%' }}>
-        <motion.h2 initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
-          Selected Works
+        <motion.h2 
+          onMouseEnter={() => setScrambleHover(true)}
+          onMouseLeave={() => setScrambleHover(false)}
+          initial={{ opacity: 0, x: -50 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          viewport={{ once: true }} 
+          style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', marginBottom: 'clamp(2rem, 5vw, 4rem)', cursor: 'none', display: 'inline-block' }}
+        >
+          {scrambleTitle}
         </motion.h2>
 
         <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: 'clamp(1.5rem, 5vw, 3rem)' }}>
@@ -67,7 +83,7 @@ export default function Projects() {
                 </div>
                 <div style={{ display: 'flex', gap: '1rem', borderTop: '1px solid var(--border-color)', paddingTop: '1.5rem' }}>
                    <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff' }}><ExternalLink size={18} /> Live</a>
-                   <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff' }}><Code size={18} /> GitHub</a>
+                   <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff' }}><GithubIcon size={18} /> GitHub</a>
                 </div>
               </div>
             </motion.div>

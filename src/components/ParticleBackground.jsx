@@ -13,10 +13,19 @@ export default function ParticleBackground() {
     });
   }, []);
 
-  const options = {
+    const options = {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
-    interactivity: { events: { onHover: { enable: false } } },
+    interactivity: { 
+      detectsOn: "window",
+      events: { 
+        onClick: { enable: true, mode: "attract" },
+        onHover: { enable: false } 
+      },
+      modes: {
+        attract: { distance: 200, duration: 0.4, factor: 5, speed: 1, easing: "ease-out-quad" }
+      }
+    },
     particles: {
       color: { value: "#ffffff" },
       move: { direction: "none", enable: true, random: true, speed: 0.3, straight: false },

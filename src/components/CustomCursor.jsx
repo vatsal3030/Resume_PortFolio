@@ -3,24 +3,34 @@ import { motion } from 'framer-motion';
 
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHoverDevice, setIsHoverDevice] = useState(true);
 
   useEffect(() => {
-    const updateMousePosition = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const checkHover = () => {
+      setIsHoverDevice(window.matchMedia("(hover: hover) and (pointer: fine)").matches);
     };
+    
+    checkHover();
+    window.addEventListener('resize', checkHover);
 
-    window.addEventListener('mousemove', updateMousePosition);
+    let updateMousePosition;
+    if (isHoverDevice) {
+      updateMousePosition = (e) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      };
 
-    // Hide default cursor across body
-    document.body.style.cursor = 'none';
-    const interactables = document.querySelectorAll('a, button, input, textarea');
-    interactables.forEach(el => el.style.cursor = 'none');
+      window.addEventListener('mousemove', updateMousePosition);
+      document.body.style.cursor = 'none';
+    }
 
     return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener('resize', checkHover);
+      if (updateMousePosition) window.removeEventListener('mousemove', updateMousePosition);
       document.body.style.cursor = 'auto';
     };
-  }, []);
+  }, [isHoverDevice]);
+
+  if (!isHoverDevice) return null;
 
   return (
     <>
