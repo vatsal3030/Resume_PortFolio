@@ -1,8 +1,6 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function Experience() {
-  const { scrollY } = useScroll();
-  const xTransform = useTransform(scrollY, [0, 3000], [0, -1500]);
 
   const skills = [
     { cat: "Languages", items: "JavaScript, C, C++, Python" },
@@ -25,31 +23,11 @@ export default function Experience() {
 
   return (
     <section id="experience" className="section" style={{ position: 'relative', overflow: 'hidden', minHeight: '80vh', borderTop: '1px solid var(--border-color)', padding: 'clamp(4rem, 8vw, 6rem) 0' }}>
-      
-      {/* Background Parallax Marquee */}
-      <motion.div
-        style={{
-          position: 'absolute',
-          top: '30%',
-          left: 0,
-          whiteSpace: 'nowrap',
-          x: xTransform,
-          fontSize: '12vw',
-          fontFamily: 'Space Grotesk, sans-serif',
-          fontWeight: 900,
-          color: 'transparent',
-          WebkitTextStroke: '1px rgba(255, 255, 255, 0.04)',
-          zIndex: 0,
-          pointerEvents: 'none'
-        }}
-      >
-        SOFTWARE ENGINEER — CREATIVE LOGIC — SCALABLE SYSTEMS — BACKEND ARCHITECTURE
-      </motion.div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1, width: '100%', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)' }}>
-        
+
         <div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -68,7 +46,7 @@ export default function Experience() {
         </div>
 
         <div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
