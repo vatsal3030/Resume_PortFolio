@@ -47,10 +47,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section" style={{ minHeight: '80vh', padding: '6rem 0', borderTop: '1px solid var(--border-color)', textAlign: 'center' }}>
+    <section id="contact" className="section" style={{ minHeight: '80vh', padding: '6rem 0 10rem 0', borderTop: '1px solid var(--border-color)', textAlign: 'center' }}>
       <div className="container" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
-        <motion.h2 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 1, marginBottom: '1rem' }}>
+        <motion.h2 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontSize: 'clamp(2.2rem, 10vw, 6rem)', lineHeight: 1, marginBottom: '1rem' }}>
           LET'S BUILD
         </motion.h2>
 

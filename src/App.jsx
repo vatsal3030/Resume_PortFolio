@@ -46,9 +46,11 @@ function App() {
       {!loading && (
         <>
           <div className="noise-overlay" />
-          <div className="glow-orb blue" style={{ top: '-10%', left: '-10%' }} />
-          <div className="glow-orb purple" style={{ top: '40%', right: '-10%' }} />
-          <div className="glow-orb blue" style={{ bottom: '-10%', left: '20%' }} />
+          <div style={{ position: 'fixed', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
+            <div className="glow-orb blue" style={{ top: '-10%', left: '-10%' }} />
+            <div className="glow-orb purple" style={{ top: '40%', right: '-10%' }} />
+            <div className="glow-orb blue" style={{ bottom: '-10%', left: '20%' }} />
+          </div>
           <Navbar />
           <ParticleBackground />
           <Meteorites />

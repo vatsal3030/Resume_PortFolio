@@ -42,12 +42,12 @@ export default function Hero() {
 
   return (
     <section className="section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', perspective: 1000, overflow: 'hidden' }}>
-      <div className="container" style={{ width: '100%', display: 'flex', flexWrap: 'wrap-reverse', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', marginTop: '4rem' }}>
+      <div className="container" style={{ width: '100%', display: 'flex', flexWrap: 'wrap-reverse', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', marginTop: '4rem', boxSizing: 'border-box' }}>
         <motion.div 
           variants={container} 
           initial="hidden" 
           animate="show"
-          style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: '1rem', rotateX: smoothRotateX, rotateY: smoothRotateY, transformStyle: "preserve-3d" }}
+          style={{ flex: '1 1 min(100%, 300px)', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '1rem', rotateX: smoothRotateX, rotateY: smoothRotateY, transformStyle: "preserve-3d" }}
         >
           <div className="text-reveal-wrapper">
             <motion.h2 variants={item} style={{ fontSize: '1.5rem', fontWeight: 400, color: 'var(--text-muted)' }}>
@@ -66,7 +66,7 @@ export default function Hero() {
               }}
               transition={{ duration: 0.2, repeat: 0 }}
               style={{ 
-                fontSize: 'clamp(4rem, 10vw, 8rem)', 
+                fontSize: 'clamp(2.5rem, 12vw, 8rem)', 
                 lineHeight: 1,
                 letterSpacing: '-0.04em',
                 cursor: 'none'
@@ -101,7 +101,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.5, type: 'spring' }}
-          style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center', rotateX: smoothRotateX, rotateY: smoothRotateY, transformStyle: "preserve-3d" }}
+          style={{ flex: '1 1 min(100%, 280px)', minWidth: 0, display: 'flex', justifyContent: 'center', rotateX: smoothRotateX, rotateY: smoothRotateY, transformStyle: "preserve-3d" }}
         >
           <motion.img 
             src={personImg} 
