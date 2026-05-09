@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
+import personImg from '../assets/person.png';
 
 export default function About() {
   const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } } };
   const item = { hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } };
 
-  // Local SVG to prevent Network Blocks (ERR_CONNECTION_CLOSED)
-  const faceSVG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"><rect width="150" height="150" fill="%231a1a1a"/><text x="50%" y="50%" fill="%23888" font-size="36" font-family="monospace" text-anchor="middle" dominant-baseline="middle">VV</text></svg>`;
 
   return (
     <section id="about" className="section" style={{ minHeight: '80vh', borderTop: '1px solid var(--border-color)', paddingTop: '4rem' }}>
@@ -17,8 +16,7 @@ export default function About() {
             
             <motion.div variants={item} style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
               <div style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--border-color)', flexShrink: 0 }}>
-                {/* Embedded Local Placeholder Face */}
-                <img src={faceSVG} alt="Vatsal Vadgama" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={personImg} alt="Vatsal Vadgama" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
               </div>
               <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', lineHeight: 1.6, flex: 1 }}>
                 Computer Science undergraduate with strong fundamentals in Data Structures and Algorithms. Building scalable full-stack web applications.
