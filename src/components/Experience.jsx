@@ -52,7 +52,7 @@ export default function Experience() {
             viewport={{ once: true }}
             style={{ fontSize: '2.5rem', marginBottom: '2rem' }}
           >
-            Education & Hackathons
+            Education & Achievements
           </motion.h2>
           <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }}>
             {education.map((e, idx) => (
@@ -66,12 +66,35 @@ export default function Experience() {
               </motion.div>
             ))}
 
+            <motion.div variants={item} className="glass-card" style={{ padding: '1.5rem', borderLeft: '2px solid var(--border-color)', marginBottom: '1rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Competitive Programming</h3>
+              <ul style={{ color: 'var(--text-muted)', lineHeight: 1.8, listStyleType: 'none', paddingLeft: '0' }}>
+                <li style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.5rem' }}>
+                  <span>LeetCode Rating: <strong style={{color: '#fff', fontFamily: 'JetBrains Mono, monospace'}}>1624</strong></span>
+                  <a href="https://leetcode.com/u/VATSAL_30/" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'underline', fontSize: '0.9rem' }}>Profile</a>
+                </li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Codeforces Rating: <strong style={{color: '#fff', fontFamily: 'JetBrains Mono, monospace'}}>1023</strong></span>
+                  <a href="https://codeforces.com/profile/23bce359" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'underline', fontSize: '0.9rem' }}>Profile</a>
+                </li>
+              </ul>
+            </motion.div>
+
             <motion.div variants={item} className="glass-card" style={{ padding: '1.5rem', borderLeft: '2px solid var(--border-color)', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Hackathons</h3>
-              <ul style={{ color: 'var(--text-muted)', lineHeight: 1.8, listStyleType: 'disc', paddingLeft: '1.2rem' }}>
-                <li>HackNUthon 6.0 Finalist (Mar 2025)</li>
-                <li>MINeD Hackathon (Feb 2025)</li>
-                <li>Build with India Hackathon (Apr 2025)</li>
+              <ul style={{ color: 'var(--text-muted)', lineHeight: 1.8, listStyleType: 'none', paddingLeft: '0' }}>
+                <li style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.5rem' }}>
+                  <span>HackNUthon 6.0 Finalist <span style={{color: '#888', fontSize: '0.8rem'}}>(Mar 2025)</span></span>
+                  <a href="https://drive.google.com/file/d/1_-NGdBcl3XkQZgsJQUO2JLmQMjMET3jW/view?usp=sharing" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'underline', fontSize: '0.9rem' }}>Certificate</a>
+                </li>
+                <li style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.5rem' }}>
+                  <span>MINeD Hackathon <span style={{color: '#888', fontSize: '0.8rem'}}>(Feb 2025)</span></span>
+                  <a href="https://drive.google.com/file/d/1iB9IxRRCGuX430_ylhHo-xYVvMrz8D7C/view?usp=sharing" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'underline', fontSize: '0.9rem' }}>Certificate</a>
+                </li>
+                <li style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Build with India Hackathon <span style={{color: '#888', fontSize: '0.8rem'}}>(Apr 2025)</span></span>
+                  <a href="https://drive.google.com/file/d/1pw9bsdE2D7OWw7abW1tDXFxhwLx2NhrP/view?usp=sharing" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'underline', fontSize: '0.9rem' }}>Certificate</a>
+                </li>
               </ul>
             </motion.div>
           </motion.div>
