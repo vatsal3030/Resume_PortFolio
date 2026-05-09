@@ -106,3 +106,64 @@ ul {
   color: var(--bg-color);
 }
 
+/* Deep Space Enhancements */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+.glow-orb.blue {
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.8) 0%, rgba(0,0,0,0) 70%);
+  width: 80vw;
+  height: 80vw;
+  max-width: 800px;
+  max-height: 800px;
+}
+
+.glow-orb.purple {
+  background: radial-gradient(circle, rgba(126, 34, 206, 0.7) 0%, rgba(0,0,0,0) 70%);
+  width: 60vw;
+  height: 60vw;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+/* Project Cards Focus Mode */
+.projects-grid:hover .project-card {
+  opacity: 0.5;
+  filter: blur(2px);
+  transform: scale(0.98);
+  transition: all 0.4s ease;
+}
+.projects-grid .project-card:hover {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1.02);
+  z-index: 10;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+.project-img {
+  transition: all 0.5s ease;
+  filter: grayscale(100%) brightness(0.6);
+}
+.project-card:hover .project-img {
+  filter: grayscale(0%) brightness(1);
+}
+

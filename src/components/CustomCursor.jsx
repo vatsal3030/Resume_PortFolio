@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHoverDevice, setIsHoverDevice] = useState(true);
+  const [isHoveringLink, setIsHoveringLink] = useState(false);
 
   useEffect(() => {
     const checkHover = () => {
@@ -14,18 +15,37 @@ export default function CustomCursor() {
     window.addEventListener('resize', checkHover);
 
     let updateMousePosition;
+    const handleMouseOver = (e) => {
+      const target = e.target;
+      if (
+        target.tagName?.toLowerCase() === 'a' ||
+        target.tagName?.toLowerCase() === 'button' ||
+        target.closest?.('a') ||
+        target.closest?.('button') ||
+        target.closest?.('.glass-card') ||
+        target.closest?.('.hero-btn') ||
+        window.getComputedStyle(target).cursor === 'pointer'
+      ) {
+        setIsHoveringLink(true);
+      } else {
+        setIsHoveringLink(false);
+      }
+    };
+
     if (isHoverDevice) {
       updateMousePosition = (e) => {
         setMousePosition({ x: e.clientX, y: e.clientY });
       };
 
       window.addEventListener('mousemove', updateMousePosition);
+      window.addEventListener('mouseover', handleMouseOver);
       document.body.style.cursor = 'none';
     }
 
     return () => {
       window.removeEventListener('resize', checkHover);
       if (updateMousePosition) window.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener('mouseover', handleMouseOver);
       document.body.style.cursor = 'auto';
     };
   }, [isHoverDevice]);
@@ -39,15 +59,18 @@ export default function CustomCursor() {
           position: 'fixed',
           top: 0,
           left: 0,
-          width: '32px',
-          height: '32px',
+          width: '12px',
+          height: '12px',
           pointerEvents: 'none',
           zIndex: 9999,
-          mixBlendMode: 'difference'
+          mixBlendMode: 'difference',
+          backgroundColor: '#ffffff',
+          borderRadius: '50%'
         }}
         animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
+          x: mousePosition.x - 6,
+          y: mousePosition.y - 6,
+          scale: isHoveringLink ? 5 : 1,
         }}
         transition={{
           type: 'spring',
@@ -55,14 +78,7 @@ export default function CustomCursor() {
           stiffness: 400,
           mass: 0.5,
         }}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(-45deg)', color: '#ffffff' }}>
-          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-          <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-          <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-          <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-        </svg>
-      </motion.div>
+      />
     </>
   );
 }

@@ -37,7 +37,7 @@ export default function Experience() {
           </motion.h2>
           <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }}>
             {skills.map((s, idx) => (
-              <motion.div variants={item} key={idx} style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid var(--border-color)' }}>
+              <motion.div variants={item} key={idx} className="glass-card" style={{ marginBottom: '1.5rem', padding: '1.5rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
                 <h4 style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '1rem', marginBottom: '0.5rem', color: '#ccc' }}>{s.cat}</h4>
                 <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>{s.items}</p>
               </motion.div>
@@ -56,7 +56,7 @@ export default function Experience() {
           </motion.h2>
           <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }}>
             {education.map((e, idx) => (
-              <motion.div variants={item} key={idx} style={{ padding: '1.5rem', borderLeft: '2px solid var(--border-color)', marginBottom: '1rem', background: 'rgba(255,255,255,0.02)' }}>
+              <motion.div variants={item} key={idx} className="glass-card" style={{ padding: '1.5rem', borderLeft: '2px solid var(--border-color)', marginBottom: '1rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                   <h3 style={{ fontSize: '1.2rem', margin: 0 }}>{e.title}</h3>
                   <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>{e.date}</span>
@@ -66,7 +66,7 @@ export default function Experience() {
               </motion.div>
             ))}
 
-            <motion.div variants={item} style={{ padding: '1.5rem', borderLeft: '2px solid var(--border-color)', background: 'rgba(255,255,255,0.02)' }}>
+            <motion.div variants={item} className="glass-card" style={{ padding: '1.5rem', borderLeft: '2px solid var(--border-color)', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Hackathons</h3>
               <ul style={{ color: 'var(--text-muted)', lineHeight: 1.8, listStyleType: 'disc', paddingLeft: '1.2rem' }}>
                 <li>HackNUthon 6.0 Finalist (Mar 2025)</li>

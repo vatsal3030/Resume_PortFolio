@@ -49,37 +49,37 @@ export default function Contact() {
   return (
     <section id="contact" className="section" style={{ minHeight: '80vh', padding: '6rem 0', borderTop: '1px solid var(--border-color)', textAlign: 'center' }}>
       <div className="container" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        
+
         <motion.h2 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 1, marginBottom: '1rem' }}>
           LET'S BUILD
         </motion.h2>
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '4rem' }}>
-          <a href="mailto:vatsalvadgama05@gmail.com" className="glass-card" style={{ cursor: 'none', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 2rem', transition: 'background 0.3s' }} onMouseEnter={e => e.target.style.background='rgba(255,255,255,0.1)'} onMouseLeave={e => e.target.style.background='rgba(255,255,255,0.03)'}>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vatsalvadgama05@gmail.com&su=Inquiry%20from%20Portfolio" target="_blank" rel="noreferrer" className="glass-card" style={{ cursor: 'none', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 2rem', transition: 'background 0.3s' }} onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}>
             <Mail size={24} /> <span style={{ fontFamily: 'JetBrains Mono, monospace' }}>Email Me</span>
           </a>
-          <a href="https://github.com/vatsalvadgama05" target="_blank" rel="noreferrer" className="glass-card" style={{ cursor: 'none', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 2rem', transition: 'background 0.3s' }} onMouseEnter={e => e.target.style.background='rgba(255,255,255,0.1)'} onMouseLeave={e => e.target.style.background='rgba(255,255,255,0.03)'}>
+          <a href="https://github.com/vatsal3030" target="_blank" rel="noreferrer" className="glass-card" style={{ cursor: 'none', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 2rem', transition: 'background 0.3s' }} onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}>
             <GithubIcon size={24} /> <span style={{ fontFamily: 'JetBrains Mono, monospace' }}>GitHub</span>
           </a>
-          <a href="https://linkedin.com/in/vatsalvadgama05" target="_blank" rel="noreferrer" className="glass-card" style={{ cursor: 'none', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 2rem', transition: 'background 0.3s' }} onMouseEnter={e => e.target.style.background='rgba(255,255,255,0.1)'} onMouseLeave={e => e.target.style.background='rgba(255,255,255,0.03)'}>
+          <a href="https://linkedin.com/in/vatsalvadgama05" target="_blank" rel="noreferrer" className="glass-card" style={{ cursor: 'none', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 2rem', transition: 'background 0.3s' }} onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}>
             <LinkedinIcon size={24} /> <span style={{ fontFamily: 'JetBrains Mono, monospace' }}>LinkedIn</span>
           </a>
         </motion.div>
 
         {/* Public View Counter & Likes */}
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ borderTop: '1px solid var(--border-color)', paddingTop: '3rem', width: '100%', maxWidth: '600px', display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
-          
+
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.8rem' }}>
             <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Total Views</span>
             <div style={{ padding: '0.2rem 1rem', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border-color)' }}>
-                <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '1.2rem', color: '#fff', pointerEvents: 'none' }}>
-                  {views > 0 ? views.toLocaleString() : 'Loading...'}
-                </span>
+              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '1.2rem', color: '#fff', pointerEvents: 'none' }}>
+                {views > 0 ? views.toLocaleString() : 'Loading...'}
+              </span>
             </div>
           </div>
 
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={handleLike} style={{ cursor: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-            <Heart size={20} fill={likes > 142 ? "white" : "none"} color={likes > 142 ? "white" : "var(--text-muted)" } style={{ transition: 'all 0.3s' }} />
+            <Heart size={20} fill={likes > 142 ? "white" : "none"} color={likes > 142 ? "white" : "var(--text-muted)"} style={{ transition: 'all 0.3s' }} />
             <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', pointerEvents: 'none' }}>Appreciate</span>
             <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '1.2rem', pointerEvents: 'none' }}>{likes}</span>
           </motion.div>

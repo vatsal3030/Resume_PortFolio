@@ -9,7 +9,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
-import MarqueeSection from './components/MarqueeSection';
+
 import Contact from './components/Contact';
 import { AnimatePresence } from 'framer-motion';
 
@@ -45,6 +45,10 @@ function App() {
 
       {!loading && (
         <>
+          <div className="noise-overlay" />
+          <div className="glow-orb blue" style={{ top: '-10%', left: '-10%' }} />
+          <div className="glow-orb purple" style={{ top: '40%', right: '-10%' }} />
+          <div className="glow-orb blue" style={{ bottom: '-10%', left: '20%' }} />
           <Navbar />
           <ParticleBackground />
           <Meteorites />
@@ -52,7 +56,7 @@ function App() {
             <Hero />
             <About />
             <Experience />
-            <MarqueeSection />
+
             <Projects />
             <Contact />
           </main>
