@@ -19,23 +19,23 @@ export default function About() {
               <img src={personImg} alt="Vatsal Vadgama" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
               </div>
               <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', lineHeight: 1.6, flex: 1 }}>
-                Computer Science undergraduate with strong fundamentals in Data Structures and Algorithms. Building scalable full-stack web applications.
+                Computer Science undergraduate at Nirma University with strong problem-solving skills and hands-on experience in building scalable full-stack web applications.
               </p>
             </motion.div>
 
             <motion.p variants={item} style={{ color: 'var(--text-muted)', fontSize: '1.2rem', lineHeight: 1.6 }}>
-              Passionate about backend systems, API design, and creating immersive user experiences on the frontend. Actively seeking software engineering internships to solve complex problems and gain real-world engineering experience.
+              Passionate about backend engineering, REST API development, database design, and modern web technologies. Strong foundation in Data Structures & Algorithms with experience in developing secure, production-ready applications. Actively seeking Software Engineering Internship opportunities to contribute, learn, and grow in a collaborative development environment.
             </motion.p>
           </div>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <motion.div variants={item} whileHover={{ scale: 1.02 }} className="glass-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'none', padding: 'clamp(1rem, 4vw, 2rem)' }}>
               <span style={{ fontSize: 'clamp(0.9rem, 3vw, 1.2rem)' }}>LeetCode Rating</span>
-              <span style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', fontFamily: 'Space Grotesk', fontWeight: 700 }}>1624</span>
+              <span style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', fontFamily: 'Space Grotesk', fontWeight: 700 }}>1694</span>
             </motion.div>
             <motion.div variants={item} whileHover={{ scale: 1.02 }} className="glass-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'none', padding: 'clamp(1rem, 4vw, 2rem)' }}>
               <span style={{ fontSize: 'clamp(0.9rem, 3vw, 1.2rem)' }}>Codeforces Rating</span>
-              <span style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', fontFamily: 'Space Grotesk', fontWeight: 700 }}>1023</span>
+              <span style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', fontFamily: 'Space Grotesk', fontWeight: 700 }}>1033</span>
             </motion.div>
             <motion.div variants={item} whileHover={{ scale: 1.02 }} className="glass-card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'none', padding: 'clamp(1rem, 4vw, 2rem)' }}>
               <span style={{ fontSize: 'clamp(0.9rem, 3vw, 1.2rem)' }}>JEE Main (Percentile)</span>

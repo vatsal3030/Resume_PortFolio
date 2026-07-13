@@ -55,7 +55,7 @@ export default function Contact() {
         </motion.h2>
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '4rem' }}>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vatsalvadgama05@gmail.com&su=Inquiry%20from%20Portfolio" target="_blank" rel="noreferrer" className="glass-card" style={{ cursor: 'none', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 2rem', transition: 'background 0.3s' }} onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vatsalvadgama04@gmail.com&su=Inquiry%20from%20Portfolio" target="_blank" rel="noreferrer" className="glass-card" style={{ cursor: 'none', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 2rem', transition: 'background 0.3s' }} onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}>
             <Mail size={24} /> <span style={{ fontFamily: 'JetBrains Mono, monospace' }}>Email Me</span>
           </a>
           <a href="https://github.com/vatsal3030" target="_blank" rel="noreferrer" className="glass-card" style={{ cursor: 'none', display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 2rem', transition: 'background 0.3s' }} onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}>

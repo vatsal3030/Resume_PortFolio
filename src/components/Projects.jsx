@@ -5,6 +5,8 @@ import { useScrambleText } from '../hooks/useScrambleText';
 import project1Img from '../assets/project1.png';
 import project2Img from '../assets/project2.png';
 import project3Img from '../assets/project3.png';
+import elevaraImg from '../assets/elevara.png';
+import soilAnalysisImg from '../assets/soil_analysis.png';
 
 const GithubIcon = ({ size = 24 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -17,22 +19,31 @@ const generateSVG = (text) => `data:image/svg+xml;utf8,<svg xmlns="http://www.w3
 
 const projects = [
   {
-    title: "Minimalist 3D Space Portfolio",
-    subtitle: "Awwwards-Style Personal Website",
-    desc: "A highly interactive, physics-based minimalist portfolio featuring a custom rendering engine. Built with a custom boot-sequence preloader and Framer Motion micro-interactions.",
-    tech: ["React", "Vite", "Framer Motion", "Particles Engine"],
-    img: project1Img || generateSVG("Space Portfolio"),
-    liveUrl: "https://portfolio.vixora.co.in/",
-    githubUrl: "https://github.com/vatsal3030/Resume_PortFolio"
+    title: "Elevara — AI Career Operating System",
+    subtitle: "AI Career Operating System",
+    desc: "Developed Elevara, an AI Career OS for resume building, ATS scoring, and cover letter generation. Implemented async parsing queues via Redis/BullMQ, AI mock interviews and roadmaps using Gemini API, and a Chrome extension for real-time LinkedIn/Naukri job fit analysis. Built with Next.js, Express, and Prisma/Supabase; integrated Razorpay and Zustand. Improved resume tailoring efficiency.",
+    tech: ["React.js", "Next.js", "Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "Supabase", "Redis", "BullMQ", "Gemini AI API", "RESTful APIs", "Tailwind CSS", "Zod"],
+    img: elevaraImg || generateSVG("Elevara AI OS"),
+    liveUrl: "https://career.vixora.co.in/",
+    githubUrl: ""
   },
   {
     title: "Vixora",
-    subtitle: "Video Streaming Platform",
-    desc: "A scalable full-stack video streaming platform with authentication, video uploads, playlists, and notifications. Implemented caching, rate limiting, and async processing using queues/workers and Socket.IO.",
-    tech: ["Node.js", "Express", "PostgreSQL", "Prisma", "Redis", "Socket.IO"],
+    subtitle: "AI Video Streaming & Analytics Platform",
+    desc: "Vixora is an AI-powered video streaming & analytics platform built with React 19, Node.js, PostgreSQL, and Prisma. Key features include a custom HTML5 video player, asynchronous video processing queues using Redis and BullMQ, real-time push notifications via Socket.io, and Cloudinary media storage. It integrates the Gemini AI API for automated video summaries and interactive transcripts, alongside a personalized feed recommendation engine and a rich user analytics dashboard using Recharts.",
+    tech: ["React 19", "Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "Redis", "Socket.io", "Cloud", "Cloudinary", "Tailwind CSS", "JWT", "REST", "System Design", "Docker", "Kubernetes"],
     img: project2Img || generateSVG("Vixora Platform"),
     liveUrl: "https://app.vixora.co.in/",
     githubUrl: "https://github.com/vatsal3030/vixora-backend"
+  },
+  {
+    title: "Agricultural Soil Analysis System",
+    subtitle: "HackNUthon 6.0 Finalist",
+    desc: "As a developer on the project, I designed and implemented the end-to-end data preprocessing and feature engineering pipelines in Python (Pandas/NumPy) to clean and normalize raw spectrometer soil datasets. I conducted correlation analyses to pinpoint optimal wavelengths (e.g. 435 nm for pH and 645 nm for NPK) and optimal water volume thresholds. Additionally, I built, tuned, and compared multiple machine learning algorithms including Random Forest Regressors, CatBoost, LightGBM, and TensorFlow Neural Networks, achieving an R² score of 0.89 and finalist standing at HackNUthon 6.0.",
+    tech: ["Python", "Machine Learning", "Data Preprocessing", "Feature Selection", "Spectroscopy", "XGBoost", "LightGBM", "Random Forest", "Deep Neural Networks", "Pandas", "NumPy", "Seaborn"],
+    img: soilAnalysisImg || generateSVG("Soil Analysis"),
+    liveUrl: "",
+    githubUrl: "https://github.com/vatsal3030/Reve-soil-1.0"
   },
   {
     title: "Bookit",
@@ -44,15 +55,6 @@ const projects = [
     githubUrl: "https://github.com/vatsal3030/Bookit-Backend"
   },
   {
-    title: "Agricultural Soil Analysis",
-    subtitle: "HackNUthon 6.0 Finalist",
-    desc: "Predicts NPK nutrient content, moisture levels, and pH values from spectrometer data. Data preprocessing and feature extraction pipelines in Python.",
-    tech: ["Python", "Data Science", "Machine Learning"],
-    img: generateSVG("Data Model Analysis"),
-    liveUrl: "",
-    githubUrl: "https://github.com/vatsal3030/Reve-soil-1.0"
-  },
-  {
     title: "Secure P2P Network",
     subtitle: "Peer-to-Peer Communication",
     desc: "C++ based messaging application with file handling, user auth, encrypted message storage, and custom memory management.",
@@ -60,6 +62,15 @@ const projects = [
     img: generateSVG("Terminal Interface"),
     liveUrl: "",
     githubUrl: "https://github.com/vatsal3030/Chat-network-app"
+  },
+  {
+    title: "Minimalist 3D Space Portfolio",
+    subtitle: "Awwwards-Style Personal Website",
+    desc: "A highly interactive, physics-based minimalist portfolio featuring a custom rendering engine. Built with a custom boot-sequence preloader and Framer Motion micro-interactions.",
+    tech: ["React", "Vite", "Framer Motion", "Particles Engine"],
+    img: project1Img || generateSVG("Space Portfolio"),
+    liveUrl: "https://portfolio.vixora.co.in/",
+    githubUrl: "https://github.com/vatsal3030/Resume_PortFolio"
   }
 ];
 
