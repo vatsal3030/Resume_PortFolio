@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import personImg from '../assets/person.png';
+import personImg from '../assets/pod_profile_image_1.png';
 
 export default function About() {
   const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } } };

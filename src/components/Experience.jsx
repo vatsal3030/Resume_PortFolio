@@ -68,27 +68,6 @@ export default function Experience() {
             ))}
 
             <motion.div variants={item} className="glass-card" style={{ padding: '1.5rem', borderLeft: '2px solid var(--border-color)', marginBottom: '1rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Internships</h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                    <h4 style={{ fontSize: '1.1rem', margin: 0 }}>Full Stack Developer</h4>
-                    <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>05 May, 2026 - 15 Jun, 2026</span>
-                  </div>
-                  <h5 style={{ fontSize: '0.95rem', color: '#ccc', marginBottom: '0.5rem', fontWeight: 400 }}>Chemicrown Tradding Co.</h5>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '0.75rem' }}>
-                    Developed ChemiCrown CDMS, a comprehensive B2B eCommerce and ERP platform designed for industrial chemical distribution. The system consolidates public product catalogs, client registrations, inventory safety compliance, sales order processing (integrating online and UPI checkouts), and an internal administration dashboard for managing employee attendance and monthly payroll. Built with React (Vite) and Tailwind CSS for a responsive, modern frontend, and Node.js (Express) with PostgreSQL (Supabase) via Prisma ORM for a secure backend.
-                  </p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: '0.5rem' }}>
-                    {["zod", "PostgreSQL", "Node.js", "Domain", "Github", "Express.js", "Socket.io", "Tailwind CSS", "REST", "Git", "CSS", "Deployment", "API", "React.js"].map((s, i) => (
-                      <span key={i} style={{ padding: '0.2rem 0.6rem', borderRadius: '4px', background: 'rgba(255,255,255,0.05)', fontSize: '0.75rem', fontFamily: 'JetBrains Mono, monospace', color: '#ccc', border: '1px solid rgba(255,255,255,0.08)' }}>{s}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div variants={item} className="glass-card" style={{ padding: '1.5rem', borderLeft: '2px solid var(--border-color)', marginBottom: '1rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Competitive Programming</h3>
               <ul style={{ color: 'var(--text-muted)', lineHeight: 1.8, listStyleType: 'none', paddingLeft: '0' }}>
                 <li style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.5rem' }}>

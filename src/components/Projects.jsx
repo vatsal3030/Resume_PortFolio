@@ -19,9 +19,19 @@ const generateSVG = (text) => `data:image/svg+xml;utf8,<svg xmlns="http://www.w3
 
 const projects = [
   {
+    title: "ChemiCrown CDMS",
+    subtitle: "Full Stack Developer Internship",
+    desc: "A comprehensive B2B eCommerce and ERP platform for industrial chemical distribution. Consolidates product catalogs, registrations, inventory compliance, sales processing, and an employee admin dashboard.",
+    tech: ["Internship", "React.js", "Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "Zod", "Socket.io", "Tailwind CSS", "REST", "Git", "CSS", "Deployment", "API", "Domain", "Github"],
+    img: generateSVG("ChemiCrown CDMS"),
+    liveUrl: "",
+    githubUrl: "",
+    isInternship: true
+  },
+  {
     title: "Elevara — AI Career Operating System",
     subtitle: "AI Career Operating System",
-    desc: "Developed Elevara, an AI Career OS for resume building, ATS scoring, and cover letter generation. Implemented async parsing queues via Redis/BullMQ, AI mock interviews and roadmaps using Gemini API, and a Chrome extension for real-time LinkedIn/Naukri job fit analysis. Built with Next.js, Express, and Prisma/Supabase; integrated Razorpay and Zustand. Improved resume tailoring efficiency.",
+    desc: "An AI Career OS for resume building, ATS scoring, and cover letter generation. Features async parsing queues, AI mock interviews, and a Chrome extension for real-time job fit analysis.",
     tech: ["React.js", "Next.js", "Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "Supabase", "Redis", "BullMQ", "Gemini AI API", "RESTful APIs", "Tailwind CSS", "Zod"],
     img: elevaraImg || generateSVG("Elevara AI OS"),
     liveUrl: "https://career.vixora.co.in/",
@@ -30,7 +40,7 @@ const projects = [
   {
     title: "Vixora",
     subtitle: "AI Video Streaming & Analytics Platform",
-    desc: "Vixora is an AI-powered video streaming & analytics platform built with React 19, Node.js, PostgreSQL, and Prisma. Key features include a custom HTML5 video player, asynchronous video processing queues using Redis and BullMQ, real-time push notifications via Socket.io, and Cloudinary media storage. It integrates the Gemini AI API for automated video summaries and interactive transcripts, alongside a personalized feed recommendation engine and a rich user analytics dashboard using Recharts.",
+    desc: "An AI-powered video streaming and analytics platform. Features a custom HTML5 player, async video processing queues, real-time push notifications, AI summaries, and interactive transcripts.",
     tech: ["React 19", "Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "Redis", "Socket.io", "Cloud", "Cloudinary", "Tailwind CSS", "JWT", "REST", "System Design", "Docker", "Kubernetes"],
     img: project2Img || generateSVG("Vixora Platform"),
     liveUrl: "https://app.vixora.co.in/",
@@ -39,7 +49,7 @@ const projects = [
   {
     title: "Agricultural Soil Analysis System",
     subtitle: "HackNUthon 6.0 Finalist",
-    desc: "As a developer on the project, I designed and implemented the end-to-end data preprocessing and feature engineering pipelines in Python (Pandas/NumPy) to clean and normalize raw spectrometer soil datasets. I conducted correlation analyses to pinpoint optimal wavelengths (e.g. 435 nm for pH and 645 nm for NPK) and optimal water volume thresholds. Additionally, I built, tuned, and compared multiple machine learning algorithms including Random Forest Regressors, CatBoost, LightGBM, and TensorFlow Neural Networks, achieving an R² score of 0.89 and finalist standing at HackNUthon 6.0.",
+    desc: "An agricultural soil analysis system predicting NPK, moisture, and pH levels from spectrometer datasets. Features robust data preprocessing, feature engineering pipelines, and multiple optimized machine learning models.",
     tech: ["Python", "Machine Learning", "Data Preprocessing", "Feature Selection", "Spectroscopy", "XGBoost", "LightGBM", "Random Forest", "Deep Neural Networks", "Pandas", "NumPy", "Seaborn"],
     img: soilAnalysisImg || generateSVG("Soil Analysis"),
     liveUrl: "",
@@ -48,7 +58,7 @@ const projects = [
   {
     title: "Bookit",
     subtitle: "Service Booking Platform",
-    desc: "Appointment booking platform for healthcare and personal care. Role-based auth, location-based search, scheduling, and payment integration.",
+    desc: "An appointment booking platform for healthcare and personal care. Features role-based authentication, location-based search, dynamic scheduling, and secure payment integration.",
     tech: ["React", "Express", "PostgreSQL", "Prisma"],
     img: project3Img || generateSVG("Bookit SaaS"),
     liveUrl: "https://bookit.vixora.co.in/",
@@ -57,7 +67,7 @@ const projects = [
   {
     title: "Secure P2P Network",
     subtitle: "Peer-to-Peer Communication",
-    desc: "C++ based messaging application with file handling, user auth, encrypted message storage, and custom memory management.",
+    desc: "A C++ based peer-to-peer messaging application featuring custom memory management, secure file handling, user authentication, and fully encrypted message storage.",
     tech: ["C++", "Data Structures", "Cryptography"],
     img: generateSVG("Terminal Interface"),
     liveUrl: "",
@@ -66,7 +76,7 @@ const projects = [
   {
     title: "Minimalist 3D Space Portfolio",
     subtitle: "Awwwards-Style Personal Website",
-    desc: "A highly interactive, physics-based minimalist portfolio featuring a custom rendering engine. Built with a custom boot-sequence preloader and Framer Motion micro-interactions.",
+    desc: "A highly interactive, physics-based minimalist portfolio featuring a custom rendering engine, custom boot-sequence preloader, and Framer Motion micro-interactions.",
     tech: ["React", "Vite", "Framer Motion", "Particles Engine"],
     img: project1Img || generateSVG("Space Portfolio"),
     liveUrl: "https://portfolio.vixora.co.in/",
@@ -102,7 +112,14 @@ const ProjectCard = ({ p }) => {
         />
       </div>
       <div style={{ padding: 'clamp(1rem, 5vw, 2rem)', display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', zIndex: 1 }}>
-        <h3 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.75rem)', marginBottom: '0.5rem' }}>{p.title}</h3>
+        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.5rem' }}>
+          <h3 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.75rem)', margin: 0 }}>{p.title}</h3>
+          {p.isInternship && (
+            <span style={{ padding: '0.2rem 0.5rem', borderRadius: '4px', background: 'rgba(255, 255, 255, 0.08)', fontSize: '0.75rem', fontFamily: 'JetBrains Mono, monospace', color: '#fff', border: '1px solid rgba(255, 255, 255, 0.1)', display: 'inline-block' }}>
+              Internship
+            </span>
+          )}
+        </div>
         <p style={{ color: 'var(--text-muted)', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.9rem', marginBottom: '1rem' }}>{p.subtitle}</p>
         <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '2rem', flex: 1 }}>{p.desc}</p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
