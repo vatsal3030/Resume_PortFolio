@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { useScrambleText } from '../hooks/useScrambleText';
-import personImg from '../assets/pod_profile_image_1.png';
+import personImg from '../assets/pod_profile_image_1_transparent.png';
 
 export default function Hero() {
   const { text: scrambleName, setIsHovering: setScrambleHover } = useScrambleText("VATSAL VADGAMA");
