@@ -7,6 +7,7 @@ import project2Img from '../assets/project2.png';
 import project3Img from '../assets/project3.png';
 import elevaraImg from '../assets/elevara.png';
 import soilAnalysisImg from '../assets/soil_analysis.png';
+import chemicrownImg from '../assets/chemicrown-cdms-project.png';
 
 const GithubIcon = ({ size = 24 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -23,7 +24,7 @@ const projects = [
     subtitle: "Full Stack Developer Internship",
     desc: "A comprehensive B2B eCommerce and ERP platform for industrial chemical distribution. Consolidates product catalogs, registrations, inventory compliance, sales processing, and an employee admin dashboard.",
     tech: ["Internship", "React.js", "Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "Zod", "Socket.io", "Tailwind CSS", "REST", "Git", "CSS", "Deployment", "API", "Domain", "Github"],
-    img: generateSVG("ChemiCrown CDMS"),
+    img: chemicrownImg,
     liveUrl: "",
     githubUrl: "",
     isInternship: true
